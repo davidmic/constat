@@ -34,6 +34,8 @@ class _AllCountriesState extends State<AllCountries> {
     return  Padding(
         padding: const EdgeInsets.only(top:10.0),
         child: ListView.builder(
+          shrinkWrap: true,
+          physics: ScrollPhysics(),
           itemCount: AllCountriesBloc.list.length,
             itemBuilder: (context, index) {
             final current = AllCountriesBloc.list[index];
@@ -121,7 +123,7 @@ class _AllCountriesState extends State<AllCountries> {
 
                             Row(
                               children: <Widget>[
-                                Text('Continent: ', style: TextStyle(fontWeight: FontWeight.bold, color: Color(0xffB2822E)),),
+//                                  Text('Continent: ', style: TextStyle(fontWeight: FontWeight.bold, color: Color(0xffB2822E)),),
 
                                 Text(current['continent'].toString()),
                               ],

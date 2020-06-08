@@ -49,7 +49,13 @@ class _MyNavigatorState extends State<MyNavigator> {
         ],
       ),
     body: SafeArea(
-      child: pages[selected],
+      child: ListView(
+        shrinkWrap: true,
+//        physics: ScrollPhysics(),
+        children: <Widget>[
+          pages[selected],
+        ],
+      ),
     ),
     bottomNavigationBar: BottomNavigationBar(
       currentIndex: selected,
